@@ -5,6 +5,7 @@ public class Product {
     }
 
     void addStock(Product product){
+        System.out.println("");
 
     }
 
