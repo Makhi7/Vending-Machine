@@ -5,14 +5,25 @@ public class OverloadedVendingMachine {
   private int stockLevelForChocolates = 0;
   private int stockLevelForProducts = stockLevelForSoftDrinks + stockLevelForSaltySnacks + stockLevelForChocolates;
 
+
+  SoftDrinks forSoftDrinks = new SoftDrinks();
   void buy(SoftDrinks softdrink){
+
+      this.forSoftDrinks = softdrink;
+
       System.out.println("buy 1 SoftDrink");
       stockLevelForSoftDrinks --;
+
       if(stockLevelForSoftDrinks < 0){
         System.out.println("Out of soft drink");
       }
   }
+
+  SaltySnacks forSaltySnacks = new SaltySnacks();
   void buy(SaltySnacks saltySnack){
+
+      this.forSaltySnacks = saltySnack;
+
       System.out.println("buy 1 SaltySnack");
       stockLevelForSaltySnacks --;
 
@@ -21,7 +32,11 @@ public class OverloadedVendingMachine {
     }
   }
 
+  Chocolates forChocolate = new Chocolates();
   void buy(Chocolates chocolate){
+
+      this.forChocolate = chocolate;
+
       System.out.println("buy 1 Chocolate");
       stockLevelForChocolates --;
 
@@ -59,5 +74,6 @@ public class OverloadedVendingMachine {
     stockLevelForChocolates = chocolatesQty;
   }
 }
+
 
 
