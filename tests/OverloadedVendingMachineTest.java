@@ -39,8 +39,13 @@ class OverloadedVendingMachineTest {
     }
 
     @Test
-    void testBuy2() {
+    void shouldBuyAllProducts() {
 
+    Product allSnacks = new Product();
+    OverloadedVendingMachine officeVendingMachine = new OverloadedVendingMachine(100,100,100);
+
+    officeVendingMachine.buy(allSnacks);
+    assertEquals(297,officeVendingMachine.buyCount(allSnacks));
     }
 
     @Test

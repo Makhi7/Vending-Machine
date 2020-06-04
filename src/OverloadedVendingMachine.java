@@ -3,7 +3,7 @@ public class OverloadedVendingMachine {
   private int stockLevelForSoftDrinks = 0;
   private int stockLevelForSaltySnacks = 0;
   private int stockLevelForChocolates = 0;
-  private int stockLevelForProducts = stockLevelForSoftDrinks + stockLevelForSaltySnacks + stockLevelForChocolates;
+  private final int stockLevelForProducts = stockLevelForSoftDrinks + stockLevelForSaltySnacks + stockLevelForChocolates;
 
 
   SoftDrinks forSoftDrinks = new SoftDrinks();
@@ -44,8 +44,11 @@ public class OverloadedVendingMachine {
       System.out.println("Out of soft chocolates");
     }
   }
-
+  Product forProduct = new Product();
   void buy(Product product){
+
+      this.forProduct = product;
+
       System.out.println("buy 1 of each product");
       stockLevelForSaltySnacks --;
       stockLevelForSoftDrinks --;
@@ -65,7 +68,7 @@ public class OverloadedVendingMachine {
   int buyCount(Chocolates chocolate){
     return stockLevelForChocolates;
   }
-
+  int buyCount(Product product){return stockLevelForProducts;}
 
   OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty){
     // set the stockLevel instance variables for each product in the constructor
